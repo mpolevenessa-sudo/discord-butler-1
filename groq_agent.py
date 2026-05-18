@@ -4,7 +4,8 @@ from dotenv import load_dotenv
 import database as db
 
 load_dotenv(override=True)
-client = Groq(api_key=os.getenv("GROQ_API_KEY"))
+api_key = os.getenv("GROQ_API_KEY")
+client = Groq(api_key=api_key)
 
 def process_user_message(discord_id, user_message, server_name="this community"):
     # Guardrails
